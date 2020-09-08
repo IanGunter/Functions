@@ -18,7 +18,7 @@ Module Functions
         'Console.WriteLine(RunningTotal(5))
         'Console.ReadLine()
         '
-        'Next
+        'Nextf
 
         accumulateMessage("Hello Johnny")
         accumulateMessage("Thats not a number")
