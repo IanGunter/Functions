@@ -20,12 +20,16 @@ Module Functions
         '
         'Nextf
 
-        accumulateMessage("Hello Johnny")
-        accumulateMessage("Thats not a number")
-        accumulateMessage("User Name is required")
+        accumulateMessage("Hello Johnny", False)
+        accumulateMessage("Thats not a number", False)
+        accumulateMessage("User Name is required", False)
 
-        Console.WriteLine()
-
+        Console.WriteLine(accumulateMessage("", False))
+        Console.ReadLine()
+        'Clear
+        Console.WriteLine(accumulateMessage("", True))
+        accumulateMessage("New Stuff.....", False)
+        Console.ReadLine()
     End Sub
 
     Function letter() As String
@@ -52,9 +56,15 @@ Module Functions
         Return total
     End Function
 
-    Function accumulateMessage(ByVal newMessage As String) As String
+    Function accumulateMessage(ByVal newMessage As String, ByVal clear As Boolean) As String
         Static userMessage As String
-        userMessage &= newMessage & vbNewLine
+        If clear = True Then
+            userMessage = ""
+        Else
+            userMessage &= newMessage & vbNewLine
+
+        End If
+
         Return userMessage
 
     End Function
